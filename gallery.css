@@ -1,0 +1,50 @@
+html,body{
+  font-family: 'Helvetica', serif;
+  margin: 0em;
+  padding: 0em;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.beads{
+  display: none;
+}
+
+.gallery-wrapper{
+  height: 100vh;
+  white-space: nowrap;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gallery-item{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gallery-item:not(last-child){
+  margin-right: .5em; 
+}
+
+.gallery-item div, .gallery-item img{
+  white-space: normal;
+}
+
+.gallery-caps{
+  /* width: 0vw; */
+}
+.gallery-caps p{
+  width: 30vw;
+  padding:1em 5em 1em 1em;
+  font-size: .8em;
+}
+.gallery-beads img{
+  width: 5vw;
+}

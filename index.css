@@ -1,0 +1,126 @@
+html,body{
+  font-family: 'Helvetica', serif;
+  /* font-style: italic; */
+  margin: 0em;
+  padding: 0em;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+img{
+  display: block;}
+  .landscape{width:50vw;}
+  .square{width:40vw;}
+  .portrait{width:30vw;}
+img:hover{
+  cursor: pointer;
+}
+
+p{
+  margin:0em;
+  padding: 0em;
+  font-size: .8em;}
+
+a{
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+iframe{
+  margin: 0;
+  border: 0;
+  position: fixed;
+  background: white;
+  z-index: 20;
+  top: 0;
+  left:0;
+  /* display: none; */
+}
+
+.close-button{
+  position: fixed;
+  top: 0;
+  right:0;
+  z-index: 300;
+}
+.close-button:hover{
+  cursor: pointer;
+}
+.close-button p{
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0;
+  margin: .5em .7em;
+  border-bottom: 2px solid #000;
+}
+
+.scroll-wrapper{
+  width: 100vw;
+  height: auto;
+  /* overflow: scroll; */
+  position: absolute;
+}
+
+.scroll-item{
+  width:100vw;
+  height: auto;
+}
+  .scroll-item > img{
+    position: relative;
+    z-index: 1 ;
+  }
+  .scroll-item > p{
+    position: relative;
+    float: right;
+    padding:0 1em;
+    z-index: 3;
+  }
+  .scroll-item > .text-area p{
+    position: relative;
+    z-index: 5 ;
+  }
+  .text-area{
+    width: 100vw;
+    height: 30vh;
+  }
+    .text-area p:first-child{
+      width: 100vw;
+      padding: .1em .1em .08em .1em;
+      /* transform: skewX(12deg); */
+
+      /* font-family: 'Libre Baskerville', serif; */
+      /* font-style: italic; */
+      text-transform: uppercase;
+      font-size: 5em;
+      line-height: .9em;
+      /* text-decoration: underline; */
+    }
+    .text-area p:nth-child(2){
+      width: 30vw;
+      padding: 0em 1em;
+
+      font-size: 1em;
+      line-height: 1em;
+    }
+  .no-offset{
+    margin-top: 0vh;
+  }
+
+.text-area-footer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+  .text-area-footer p{
+    padding: 1em 2em 1em 1em;
+  }
+
+
+.beads img{
+  width: 100%;
+}
+
+/* helpers */
+.heading-big{font-size: 5em;}
+.heading-medium{font-size: 2em;}
+.heading-small{font-size: 1.5em;}
