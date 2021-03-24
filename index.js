@@ -1,6 +1,5 @@
 $(window).scroll(function() {
   sessionStorage.scrollTop = $(this).scrollTop();
-  // sessionStorage.scrollLeft = $(this).scrollLeft();
 });
 
 $(document).ready(function(){
@@ -8,9 +7,14 @@ $(document).ready(function(){
   if (sessionStorage.scrollTop != "undefined") {
     $(window).scrollTop(sessionStorage.scrollTop);
   }
-  // if (sessionStorage.scrollLeft != "undefined") {
-  //   $(window).scrollLeft(sessionStorage.scrollLeft);
-  // }
+
+  // add image gallery
+  var iframe = "<iframe id='gallery-popup' src='gallery.html' width='100%' height='100%'></iframe>";
+  var closeButton = "<div id='close-button'><p>close</p></div>";
+  $(".scroll-wrapper").append(iframe);
+  $(".scroll-wrapper").append(closeButton);
+  $("#gallery-popup").hide();
+  $("#close-button").hide();
 
   // parallax effect
   var rellax = new Rellax('.parallax-item');
@@ -26,24 +30,13 @@ $(document).ready(function(){
     });
 
   }).click(function(){
-    $('iframe[id="gallery-popup"]').remove();
-    $(".close-button").remove();
     // show gallery view on img click
-    var iframe = "<iframe id='gallery-popup' src='gallery.html' width='100%' height='100%'></iframe>";
-    var closeButton = "<div class='close-button'><p>close</p></div>";
-    $("body").append(iframe).hide().delay(200).fadeIn(600);
-    $("body").append(closeButton).hide().delay(200).fadeIn(600);
-    $('body').css({'overflow':'hidden'});
-    $(document).bind('scroll',function () {
-     window.scrollTo(0,0);
-     // $(window).scrollTop(sessionStorage.scrollTop);
-    });
-    $(".close-button").click(function(){
-      console.log('click');
-      $('iframe[id="gallery-popup"]').fadeOut();
+    $("#gallery-popup").fadeIn();
+    $("#close-button").fadeIn();
+    // close gallery view on button click
+    $("#close-button").click(function(){
+      $("#gallery-popup").fadeOut();
       $(this).fadeOut();
-      $(document).unbind('scroll');
-      // $('body').css({'overflow':'visible'});
     });
   });
 

@@ -1,10 +1,10 @@
 html,body{
   font-family: 'Helvetica', serif;
-  /* font-style: italic; */
   margin: 0em;
   padding: 0em;
   overflow-x: hidden;
   overflow-y: scroll;
+  background: #edeae5;
 }
 
 img{
@@ -27,7 +27,7 @@ a{
   color: #000;
 }
 
-iframe{
+#gallery-popup{
   margin: 0;
   border: 0;
   position: fixed;
@@ -38,16 +38,16 @@ iframe{
   /* display: none; */
 }
 
-.close-button{
+#close-button{
   position: fixed;
   top: 0;
   right:0;
   z-index: 300;
 }
-.close-button:hover{
+#close-button:hover{
   cursor: pointer;
 }
-.close-button p{
+#close-button p{
   font-size: 1em;
   line-height: 1em;
   padding: 0;
@@ -83,26 +83,39 @@ iframe{
   .text-area{
     width: 100vw;
     height: 30vh;
-  }
-    .text-area p:first-child{
-      width: 100vw;
-      padding: .1em .1em .08em .1em;
-      /* transform: skewX(12deg); */
+    margin-top: 3em;
 
-      /* font-family: 'Libre Baskerville', serif; */
-      /* font-style: italic; */
-      text-transform: uppercase;
-      font-size: 5em;
+    /* position: absolute; */
+  }
+    .text-area p{display: inline-block;}
+    .text-area p:first-child{
+      width: 30vw;
+      vertical-align: top;
+      padding-bottom: .3rem;
+      margin-left: 10vw;
+
+      font-family: "Helvetica", serif;
+      font-size: 2em;
       line-height: .9em;
-      /* text-decoration: underline; */
     }
     .text-area p:nth-child(2){
+      vertical-align: top;
+      padding-bottom: .3rem;
+      margin-left: 10vw;
+
+      font-family: "Helvetica", serif;
+      font-size: 1em;
+      line-height: .9em;
+    }
+      .rebecca{font-family: "Garamond", serif; font-style: none;}
+
+    /* .text-area p:nth-child(2){
       width: 30vw;
       padding: 0em 1em;
 
       font-size: 1em;
       line-height: 1em;
-    }
+    } */
   .no-offset{
     margin-top: 0vh;
   }
@@ -110,6 +123,7 @@ iframe{
 .text-area-footer{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin: 0 10vw;
 }
   .text-area-footer p{
     padding: 1em 2em 1em 1em;
@@ -124,3 +138,4 @@ iframe{
 .heading-big{font-size: 5em;}
 .heading-medium{font-size: 2em;}
 .heading-small{font-size: 1.5em;}
+.hide{visibility: hidden;}
