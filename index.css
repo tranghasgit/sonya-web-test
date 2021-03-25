@@ -107,7 +107,11 @@ a{
       font-size: 1em;
       line-height: .9em;
     }
-      .rebecca{font-family: "Garamond", serif; font-style: none;}
+      .rebecca{
+        font-family: "Garamond", serif;
+        font-style: italic;
+        font-size: 1.1em;
+      }
 
     /* .text-area p:nth-child(2){
       width: 30vw;

@@ -24,13 +24,13 @@ html,body{
 .gallery-item{
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
   justify-content: flex-start;
   align-items: center;
 }
 
 .gallery-item:not(last-child){
-  margin-right: .5em; 
+  margin-right: .5em;
 }
 
 .gallery-item div, .gallery-item img{

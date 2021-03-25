@@ -16,23 +16,39 @@ $(document).ready(function(){
   $("#gallery-popup").hide();
   $("#close-button").hide();
 
+  // var iframe = $('iframe');
+  // var targetItem = $('#gallery-popup').contents().find('[data-target="' + 3 + '"]').offset().left;
+  // const targetItem = $('[data-target="' + 3 + '"]', iframe.contents()).offset().left;
+  // console.log(targetItem);
+
+
   // parallax effect
   var rellax = new Rellax('.parallax-item');
 
   // randomize image left position based on 4 anchor points
   var arr = [0,1/4,2/4,3/4];
-  $(".scroll-item img").each(function(){
+  $(".scroll-item").each(function(){
     const winW = $(window).width();
-    const itemW = $(this).width();
+    const itemW = $(this).children().width();
     const offset = (winW-itemW) * arr[Math.floor(Math.random() * arr.length)];
-    $(this).css({
+    $(this).children().css({
       "margin-left" : offset
     });
 
+
   }).click(function(){
+    const i = $(this).data('index');
+    console.log(i);
+
+    // const targetItem = $('[data-target="' + i + '"]');
+    // console.log(targetItem);
+    // const offsetTarget = targetItem.offset().left;
+    // $('.gallery-wrapper').scrollLeft(off3);
+
     // show gallery view on img click
     $("#gallery-popup").fadeIn();
     $("#close-button").fadeIn();
+    
     // close gallery view on button click
     $("#close-button").click(function(){
       $("#gallery-popup").fadeOut();
