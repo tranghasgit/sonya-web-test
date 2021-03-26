@@ -1,19 +1,12 @@
-html,body{
-  font-family: 'Helvetica', serif;
-  margin: 0em;
-  padding: 0em;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
 .beads{
-  display: none;
+  /* display: none; */
 }
 
 .gallery-wrapper{
   height: 100vh;
   white-space: nowrap;
   overflow: scroll;
+
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -24,7 +17,6 @@ html,body{
 .gallery-item{
   display: flex;
   flex-direction: row;
-  /* flex-wrap: nowrap; */
   justify-content: flex-start;
   align-items: center;
 }

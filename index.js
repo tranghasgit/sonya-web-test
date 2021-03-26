@@ -3,30 +3,20 @@ $(window).scroll(function() {
 });
 
 $(document).ready(function(){
+  $("#gallery-popup").hide();
+  $("#close-button").hide();
+
   // keep same scroll position after reload
   if (sessionStorage.scrollTop != "undefined") {
     $(window).scrollTop(sessionStorage.scrollTop);
   }
-
-  // add image gallery
-  var iframe = "<iframe id='gallery-popup' src='gallery.html' width='100%' height='100%'></iframe>";
-  var closeButton = "<div id='close-button'><p>close</p></div>";
-  $(".scroll-wrapper").append(iframe);
-  $(".scroll-wrapper").append(closeButton);
-  $("#gallery-popup").hide();
-  $("#close-button").hide();
-
-  // var iframe = $('iframe');
-  // var targetItem = $('#gallery-popup').contents().find('[data-target="' + 3 + '"]').offset().left;
-  // const targetItem = $('[data-target="' + 3 + '"]', iframe.contents()).offset().left;
-  // console.log(targetItem);
-
 
   // parallax effect
   var rellax = new Rellax('.parallax-item');
 
   // randomize image left position based on 4 anchor points
   var arr = [0,1/4,2/4,3/4];
+
   $(".scroll-item").each(function(){
     const winW = $(window).width();
     const itemW = $(this).children().width();
@@ -37,24 +27,33 @@ $(document).ready(function(){
 
 
   }).click(function(){
-    const i = $(this).data('index');
-    console.log(i);
+    $('html,body').css({
+      "overflow-y" : "hidden"
+    });
 
-    // const targetItem = $('[data-target="' + i + '"]');
-    // console.log(targetItem);
-    // const offsetTarget = targetItem.offset().left;
-    // $('.gallery-wrapper').scrollLeft(off3);
+    // find index of clicked image
+    var i = $(this).data('index');
 
-    // show gallery view on img click
+    // open gallery lightbox
     $("#gallery-popup").fadeIn();
     $("#close-button").fadeIn();
-    
-    // close gallery view on button click
-    $("#close-button").click(function(){
-      $("#gallery-popup").fadeOut();
-      $(this).fadeOut();
+    $(".gallery-wrapper").scrollLeft(0); // reset scroll position
+
+    // scroll target image to correct position determined by clicked image
+    var target = $("#gallery-popup").find("[data-target='" + i + "']");
+    var offset = target.offset().left;
+    $(".gallery-wrapper").scrollLeft(offset);
+  });
+
+  // close lightbox
+  $("#close-button").click(function(){
+    $("#gallery-popup").fadeOut();
+    $(this).fadeOut();
+    $('html,body').css({
+      "overflow-y" : "auto"
     });
   });
+
 
 
 
@@ -136,5 +135,5 @@ $(document).ready(function(){
 
 
 
-
+// Ending of document ready function
 });
