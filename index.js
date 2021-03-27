@@ -38,11 +38,36 @@ $(document).ready(function(){
     $("#gallery-popup").fadeIn();
     $("#close-button").fadeIn();
     $(".gallery-wrapper").scrollLeft(0); // reset scroll position
+    $('[data-target]:not(:last-child)').css({
+      "margin-right" : '.5em',
+      "margin-left" : '0em',
+    });
+    $('[data-target]').css({
+      "opacity" : .25,
+    });
 
     // scroll target image to correct position determined by clicked image
     var target = $("#gallery-popup").find("[data-target='" + i + "']");
-    var offset = target.offset().left;
+    var outerContW = $(".gallery-wrapper").outerWidth();
+    var targetW = target.outerWidth();
+    var offCenter = (outerContW - targetW) / 2;
+    var offset = target.offset().left - offCenter;
     $(".gallery-wrapper").scrollLeft(offset);
+
+    target.css({
+      // "margin-right" : targetW,
+      "opacity" : 1,
+    });
+
+
+    $('[data-target]').each(function(){
+      $(this).click(function(){
+        $(this).animate({
+          // "margin-right" : $(this).outerWidth(),
+          "opacity" : 1,
+        });
+      });
+    });
   });
 
   // close lightbox

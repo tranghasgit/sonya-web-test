@@ -121,7 +121,7 @@ a{
   position: fixed;
   z-index: 300;
 
-  background: rgba(20, 13, 16, 0.8);
+  background: rgba(20, 13, 16, 0.9);
   color:rgb(255, 255, 255);
   font-family: 'Helvetica', serif;
 }

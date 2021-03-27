@@ -12,6 +12,8 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+
+  scroll-snap-type: x mandatory;
 }
 
 .gallery-item{
@@ -19,6 +21,8 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+
+  scroll-snap-align: center;
 }
 
 .gallery-item:not(last-child){
@@ -40,3 +44,5 @@
 .gallery-beads img{
   width: 5vw;
 }
+
+.img-number{padding: .5em;}
