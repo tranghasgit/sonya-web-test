@@ -7,8 +7,9 @@
     <link rel="preload" href="index.css" as="style">
     <link rel="preload" href="index.js" as="script">
 
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -157,8 +158,19 @@
         </div>
       </div>
     </div>
+    <div id="video-embed">
+      <div class="close-button"><p>close</p></div>
+      <div class="video-wrapper">
+          <div data-video="0" class="video-item">
+            <div class="video-item-wrapper">
+              <iframe width="1280" height="720" src="https://www.youtube.com/embed/WfhnEAaX3R8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <!-- <p class="video-number">1/14</p> -->
+            </div>
+          </div>
+      </div>
+    </div>
     <div id="gallery-popup">
-      <div id="close-button"><p>close</p></div>
+      <div class="close-button"><p>close</p></div>
       <div class="gallery-wrapper">
         <div data-target="0" class="gallery-item">
           <div class="gallery-img-wrapper">

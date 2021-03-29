@@ -4,7 +4,9 @@ $(window).scroll(function() {
 
 $(document).ready(function(){
   $("#gallery-popup").hide();
-  $("#close-button").hide();
+  $("#video-embed").hide();
+  $("#gallery-popup > .close-button").hide();
+  $("#video-embed > .close-button").hide();
 
   // keep same scroll position after reload
   if (sessionStorage.scrollTop != "undefined") {
@@ -36,7 +38,7 @@ $(document).ready(function(){
 
     // open gallery lightbox
     $("#gallery-popup").fadeIn();
-    $("#close-button").fadeIn();
+    $("#gallery-popup > .close-button").fadeIn();
     $(".gallery-wrapper").scrollLeft(0); // reset scroll position
     $('[data-target]:not(:last-child)').css({
       "margin-right" : '.5em',
@@ -71,7 +73,7 @@ $(document).ready(function(){
   });
 
   // close lightbox
-  $("#close-button").click(function(){
+  $("#gallery-popup > .close-button").click(function(){
     $("#gallery-popup").fadeOut();
     $(this).fadeOut();
     $('html,body').css({
@@ -152,8 +154,25 @@ $(document).ready(function(){
     });
   }
 
+  // open vieo lightbox
+  $(".beads").each(function(){
+    $(this).click(function(){
+      $('html,body').css({
+        "overflow-y" : "hidden"
+      });
+      $("#video-embed").fadeIn();
+      $("#video-embed > .close-button").fadeIn();
+    });
+  });
 
-
+  // close video lightbox
+  $("#video-embed > .close-button").click(function(){
+    $("#video-embed").fadeOut();
+    $(this).fadeOut();
+    $('html,body').css({
+      "overflow-y" : "auto"
+    });
+  });
 
 
 
