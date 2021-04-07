@@ -110,6 +110,10 @@ a{
   width: 100%;
 }
 
+.scroll-text-item{
+  margin: 10em 0;
+}
+
 /* gallery view */
 #gallery-popup{
   height:100vh;

@@ -85,78 +85,52 @@ $(document).ready(function(){
 
 
   // add beads to page
-  const beadsSet1 = 4;
+  const beadsSet1 = 14;
   for (var i = 0; i < beadsSet1; i++) {
-    var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
+    var newDiv = "<div class='beads bead-" + i + "'><img src='media/deco/img-" + i + ".png'></div>";
     const beadW = 50;
     const beadH = 50;
     const beadsOffsetY = 100;
 
-    $("body").append(newDiv);
-    $(".bead-"+i).css({
-      "position":"absolute",
-      "top": i * beadH + beadsOffsetY,
-      "right": 0,
-      "width": beadW,
-      "height": beadH,
-      // "background-color":"#000"
-    });
-  }
-  const beadsSet2 = 8;
-  for (var i = beadsSet1; i < beadsSet2; i++) {
-    var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
-    const beadW = 50;
-    const beadH = 50;
-    const beadsOffsetY = 800;
+    var posLR = ["left","right"];
+    var randPosLR = Math.floor(Math.random() * ($(window).width() - beadW)/2);
+    var xPos = 50 + 80 * Math.sin((i / 80) * 5 * Math.PI);
 
     $("body").append(newDiv);
-    $(".bead-"+i).css({
+    $(".bead-" + i).css({
       "position":"absolute",
       "top": i * beadH + beadsOffsetY,
-      "left": 0,
+      "right" : xPos,
       "width": beadW,
       "height": beadH,
       // "background-color":"#000"
     });
   }
-  const beadsSet3 = 10;
-  for (var i = beadsSet2; i < beadsSet3; i++) {
-    var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
-    const beadW = 50;
-    const beadH = 50;
-    const beadsOffsetY = 2600;
 
-    $("body").append(newDiv);
-    $(".bead-"+i).css({
-      "position":"absolute",
-      "top": i * beadH + beadsOffsetY,
-      "left": 0,
-      "width": beadW,
-      "height": beadH,
-      // "background-color":"#000"
-    });
-  }
-  const beadsSet4 = 16;
-  for (var i = beadsSet3; i < beadsSet4; i++) {
-    var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
-    const beadW = 50;
-    const beadH = 50;
-    const beadsOffsetY = 2600;
-
-    $("body").append(newDiv);
-    $(".bead-"+i).css({
-      "position":"absolute",
-      "top": i * beadH + beadsOffsetY,
-      "right": 0,
-      "width": beadW,
-      "height": beadH,
-      // "background-color":"#000"
-    });
-  }
+  var videos = [
+    "https://www.youtube.com/embed/CUGLxMZ2yZ8",
+    "https://www.youtube.com/embed/WfhnEAaX3R8",
+    "https://www.youtube.com/embed/6SjuC6w9m7c",
+    "https://www.youtube.com/embed/xMnjDeiJlBM",
+    "https://www.youtube.com/embed/TKTiGceB5n8",
+    "https://www.youtube.com/embed/-SMHojCME-I",
+    "https://www.youtube.com/embed/QEMy9clZFEk",
+    "https://www.youtube.com/embed/NaczwMFu_J8",
+    "https://www.youtube.com/embed/lO--wZ-Q7lE",
+    "https://www.youtube.com/embed/xuEZ4Ts0jBg",
+    "https://www.youtube.com/embed/-Bwj1-3nro8",
+    "https://www.youtube.com/embed/rBMC0GZcwCg",
+    "https://www.youtube.com/embed/oMUk4ExRD0A",
+    "https://www.youtube.com/embed/xf9P5O8tEEE"
+  ];
 
   // open vieo lightbox
   $(".beads").each(function(){
     $(this).click(function(){
+      var indexBead = $(this).index();
+      var indexVid = videos[indexBead - 3] + "?autoplay=1&autohide=1&showinfo=0&controls=0";
+      console.log(indexBead,indexVid);
+      $("#video-embed").find("iframe").attr("src", indexVid);
       $('html,body').css({
         "overflow-y" : "hidden"
       });
@@ -167,12 +141,73 @@ $(document).ready(function(){
 
   // close video lightbox
   $("#video-embed > .close-button").click(function(){
+    var video = $("#video-embed").find("iframe").attr("src");
+    $("#video-embed").find("iframe").attr("src","");
     $("#video-embed").fadeOut();
     $(this).fadeOut();
     $('html,body').css({
       "overflow-y" : "auto"
     });
   });
+
+
+  // const beadsSet2 = 8;
+  // for (var i = beadsSet1; i < beadsSet2; i++) {
+  //   var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
+  //   const beadW = 50;
+  //   const beadH = 50;
+  //   const beadsOffsetY = 800;
+  //
+  //   $("body").append(newDiv);
+  //   $(".bead-"+i).css({
+  //     "position":"absolute",
+  //     "top": i * beadH + beadsOffsetY,
+  //     "left": 0,
+  //     "width": beadW,
+  //     "height": beadH,
+  //     // "background-color":"#000"
+  //   });
+  // }
+  // const beadsSet3 = 10;
+  // for (var i = beadsSet2; i < beadsSet3; i++) {
+  //   var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
+  //   const beadW = 50;
+  //   const beadH = 50;
+  //   const beadsOffsetY = 2600;
+  //
+  //   $("body").append(newDiv);
+  //   $(".bead-"+i).css({
+  //     "position":"absolute",
+  //     "top": i * beadH + beadsOffsetY,
+  //     "left": 0,
+  //     "width": beadW,
+  //     "height": beadH,
+  //     // "background-color":"#000"
+  //   });
+  // }
+  // const beadsSet4 = 16;
+  // for (var i = beadsSet3; i < beadsSet4; i++) {
+  //   var newDiv = "<div class='beads bead-"+i+"'><img src='media/deco/img-"+i+".png'></div>";
+  //   const beadW = 50;
+  //   const beadH = 50;
+  //   const beadsOffsetY = 2600;
+  //
+  //   $("body").append(newDiv);
+  //   $(".bead-"+i).css({
+  //     "position":"absolute",
+  //     "top": i * beadH + beadsOffsetY,
+  //     "right": 0,
+  //     "width": beadW,
+  //     "height": beadH,
+  //     // "background-color":"#000"
+  //   });
+  // }
+
+
+
+// var video = $("iframe").attr("src");
+// $("iframe").attr("src","");
+// $("iframe").attr("src",video);
 
 
 
