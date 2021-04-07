@@ -17,7 +17,7 @@ $(document).ready(function(){
   var rellax = new Rellax('.parallax-item');
 
   // randomize image left position based on 4 anchor points
-  var arr = [0,1/4,2/4,3/4];
+  var arr = [1/5,2/5,3/5,4/5];
 
   $(".scroll-item").each(function(){
     const winW = $(window).width();

@@ -38,7 +38,7 @@ a{
   width:100vw;
   height: auto;
 }
-  .scroll-item > img{
+  .scroll-item > img, .scroll-item > div{
     position: relative;
     z-index: 1 ;
   }
@@ -106,8 +106,15 @@ a{
   }
 
 
+.beads{
+  width:50px;
+  height:50px;
+
+}
 .beads img{
   width: 100%;
+  margin-left: -55px;
+  margin-top: -50px;
 }
 
 .scroll-text-item{
