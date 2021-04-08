@@ -33,6 +33,12 @@ $(document).ready(function(){
       "overflow-y" : "hidden"
     });
 
+    var randomAud = Math.floor(Math.random() * 3)
+    var audio = $(".audio");
+    audio.get(randomAud).play();
+    console.log(randomAud);
+
+
     // find index of clicked image
     var i = $(this).data('index');
 
