@@ -59,7 +59,7 @@ a{
 
     /* position: absolute; */
   }
-    .text-area p{display: inline-block;}
+    .text-area p{display: block;}
     .text-area p:first-child{
       width: 30vw;
       vertical-align: top;
@@ -74,6 +74,7 @@ a{
       vertical-align: top;
       padding-bottom: .3rem;
       margin-left: 10vw;
+      margin-top: .1em;
 
       font-family: "Helvetica", serif;
       font-size: 1em;

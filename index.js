@@ -134,7 +134,7 @@ $(document).ready(function(){
   $(".beads").each(function(){
     $(this).click(function(){
       var indexBead = $(this).index();
-      var indexVid = videos[indexBead - 3] + "?autoplay=1&autohide=1&showinfo=0&controls=0";
+      var indexVid = videos[indexBead - 3] + "?autoplay=1&autohide=1&showinfo=0&controls=0&hd=1";
       console.log(indexBead,indexVid);
       $("#video-embed").find("iframe").attr("src", indexVid);
       $('html,body').css({
