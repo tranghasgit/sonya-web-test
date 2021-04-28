@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Basteleur B';
+  src: url("media/fonts/basteleur-master/fonts/webfonts/Basteleur-Bold.woff2") format("woff2"),
+       url("media/fonts/basteleur-master/fonts/webfonts/Basteleur-Bold.woff") format("woff");
+}
+
+
+
 html,body{
-  font-family: 'Helvetica', serif;
+  font-family: 'Basteleur B', serif;
   margin: 0em;
   padding: 0em;
   overflow-x: hidden;
@@ -12,6 +20,9 @@ img{
   .landscape{width:50vw;}
   .square{width:40vw;}
   .portrait{width:30vw;}
+  .large{width:60vw;}
+  .medium{width:30vw;}
+  .small{width:15vw;}
 img:hover{
   cursor: pointer;
 }
@@ -30,13 +41,12 @@ a{
 .scroll-wrapper{
   width: 100vw;
   height: auto;
-  /* overflow: scroll; */
   position: absolute;
 }
 
 .scroll-item{
   width:100vw;
-  height: auto;
+  height:auto;
 }
   .scroll-item > img, .scroll-item > div{
     position: relative;
@@ -50,60 +60,84 @@ a{
   }
   .scroll-item > .text-area p{
     position: relative;
-    z-index: 5 ;
+    z-index: 5;
   }
+
+
+
   .text-area{
+    position: absolute;
     width: 100vw;
-    height: 30vh;
-    margin-top: 3em;
+    margin: 1rem 0;
+    z-index: 199;
 
-    /* position: absolute; */
+    font-family: 'Basteleur B', serif;
+    font-size: 1.6em;
+    line-height: 0.9em;
   }
-    .text-area p{display: block;}
-    .text-area p:first-child{
-      width: 30vw;
-      vertical-align: top;
-      padding-bottom: .3rem;
-      margin-left: 10vw;
-
-      font-family: "Helvetica", serif;
-      font-size: 2em;
-      line-height: .9em;
+    .text-area > p{
+      display: block;
+      margin-top: 1rem;
+      padding: 0 2rem;
     }
-    .text-area p:nth-child(2){
-      vertical-align: top;
-      padding-bottom: .3rem;
-      margin-left: 10vw;
-      margin-top: .1em;
-
-      font-family: "Helvetica", serif;
-      font-size: 1em;
-      line-height: .9em;
+    .project-name{color:rgb(0, 0, 0);}
+    .artist-name{grid-area: artist;color: rgb(120, 24, 222);}
+    .dropdown-info{grid-area: info;}
+    .dropdown-about{grid-area: about;}
+    .dropdown-contact{grid-area: contact;}
+    .link-bar-wrapper{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-areas:
+      "artist . . ."
+      "info . . ."
+      "about . . ."
+      "contact . . .";
+      grid-template-rows: auto;
+      padding: 0 2rem;
     }
-      .rebecca{
-        font-family: "Garamond", serif;
-        font-style: italic;
-        font-size: 1.1em;
+    .dropdown-info-content{
+      margin: 1rem 0 0 0;
+      padding-left:.5rem;
+      display: none;
+
+      font-family: 'Helvetica',sans-serif;
+      font-size: 0.6em;
+      line-height: 1em;
+    }
+      .more-style {
+        margin:0 0 1rem 0;
+        color: rgb(120, 24, 222);
+      }
+      .more-style span{
+        border-bottom: .1rem rgb(120, 24, 222) solid;
       }
 
-    /* .text-area p:nth-child(2){
-      width: 30vw;
-      padding: 0em 1em;
+    .dropdown-about-content{
+      margin: 1rem 0;
+      padding-left:.5rem;
+      display: none;
 
-      font-size: 1em;
+      font-family: 'Helvetica',sans-serif;
+      font-size: 0.6em;
       line-height: 1em;
-    } */
+    }
+    .dropdown-contact-content{
+      margin: 1rem 0;
+      padding-left:.5rem;
+      display: none;
+
+      font-family: 'Helvetica',sans-serif;
+      font-size: 0.6em;
+      line-height: 1em;
+    }
+    .dropdown-contact-content a{
+      color: rgb(120, 24, 222);
+      border: none;
+    }
+
   .no-offset{
     margin-top: 0vh;
-  }
-
-.text-area-footer{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  margin: 0 10vw;
-}
-  .text-area-footer p{
-    padding: 1em 2em 1em 1em;
   }
 
 
@@ -116,10 +150,6 @@ a{
   width: 100%;
   margin-left: -55px;
   margin-top: -50px;
-}
-
-.scroll-text-item{
-  margin: 10em 0;
 }
 
 /* gallery view */
@@ -179,3 +209,5 @@ a{
 .heading-medium{font-size: 2em;}
 .heading-small{font-size: 1.5em;}
 .show{visibility: visible;}
+.pointer-cursor{cursor: pointer;}
+.purple-letter{color: rgb(120, 24, 222);}

@@ -16,19 +16,142 @@ $(document).ready(function(){
   // parallax effect
   var rellax = new Rellax('.parallax-item');
 
-  // randomize image left position based on 4 anchor points
-  var arr = [1/5,2/5,3/5,4/5];
+  // adjust images and videos left position based on 4 anchor points
+  var arr = [0,1/5,2/5,3/5,4/5,5/5];
 
+  //images
   $(".scroll-item").each(function(){
     const winW = $(window).width();
     const itemW = $(this).children().width();
-    const offset = (winW-itemW) * arr[Math.floor(Math.random() * arr.length)];
-    $(this).children().css({
-      "margin-left" : offset
+    const offset = (winW-itemW);
+    $(this).children('.img-0').css({
+      "margin-left" : offset * arr[4],
     });
+    $(this).children('.img-1').css({
+      "margin-left" : offset * arr[1]
+    });
+    $(this).children('.img-2').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.img-3').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.img-4').css({
+      "margin-left" : offset * arr[5]
+    });
+    $(this).children('.img-5').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.img-6').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.img-7').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.img-8').css({
+      "margin-left" : offset * arr[1]
+    });
+    $(this).children('.img-9').css({
+      "margin-left" : offset * arr[5]
+    });
+    $(this).children('.img-10').css({
+      "margin-left" : offset * arr[1]
+    });
+    $(this).children('.img-11').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.img-12').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.img-13').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-14').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.img-15').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-16').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.img-17').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.img-18').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.img-19').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-20').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-21').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.img-22').css({
+      "margin-left" : offset * arr[5]
+    });
+    $(this).children('.img-23').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.img-24').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-25').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.img-26').css({
+      "margin-left" : offset * arr[4]
+    });
+  });
 
+  // videos
+  $(".scroll-item-vid").each(function(){
+    const winW = $(window).width();
+    const itemW = $(this).children().width();
+    const offset = (winW-itemW);
+    $(this).children('.vid-0').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.vid-1').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.vid-2').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.vid-3').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.vid-4').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.vid-5').css({
+      "margin-left" : offset * arr[2]
+    });
+    $(this).children('.vid-6').css({
+      "margin-left" : offset * arr[5]
+    });
+    $(this).children('.vid-7').css({
+      "margin-left" : offset * arr[3]
+    });
+    $(this).children('.vid-8').css({
+      "margin-left" : offset * arr[4]
+    });
+    $(this).children('.vid-9').css({
+      "margin-left" : offset * arr[0]
+    });
+    $(this).children('.vid-10').css({
+      "margin-left" : offset * arr[5]
+    });
+    $(this).children('.vid-11').css({
+      "margin-left" : offset * arr[0]
+    });
+  });
 
-  }).click(function(){
+  // gallery lightbox function
+  $(".scroll-item").click(function(){
     $('html,body').css({
       "overflow-y" : "hidden"
     });
@@ -99,51 +222,53 @@ $(document).ready(function(){
     const beadsOffsetY = 100;
 
     var posLR = ["left","right"];
-    var randPosLR = Math.floor(Math.random() * ($(window).width() - beadW)/2);
+    var randPosLR = Math.floor(Math.random() * ($(window).width() - beadW));
+    var randPosLH = Math.floor(Math.random() * ($(".scroll-wrapper").height() - beadH));
     var xPos = 50 + 80 * Math.sin((i / 80) * 5 * Math.PI);
 
     $("body").append(newDiv);
     $(".bead-" + i).css({
       "position":"absolute",
-      "top": i * beadH + beadsOffsetY,
-      "right" : xPos,
+      "top": randPosLH,
+      // "top": i * beadH + beadsOffsetY,
+      "right" : randPosLR,
       "width": beadW,
       "height": beadH,
       // "background-color":"#000"
     });
   }
 
-  var videos = [
-    "https://www.youtube.com/embed/CUGLxMZ2yZ8",
-    "https://www.youtube.com/embed/WfhnEAaX3R8",
-    "https://www.youtube.com/embed/6SjuC6w9m7c",
-    "https://www.youtube.com/embed/xMnjDeiJlBM",
-    "https://www.youtube.com/embed/TKTiGceB5n8",
-    "https://www.youtube.com/embed/-SMHojCME-I",
-    "https://www.youtube.com/embed/QEMy9clZFEk",
-    "https://www.youtube.com/embed/NaczwMFu_J8",
-    "https://www.youtube.com/embed/lO--wZ-Q7lE",
-    "https://www.youtube.com/embed/xuEZ4Ts0jBg",
-    "https://www.youtube.com/embed/-Bwj1-3nro8",
-    "https://www.youtube.com/embed/rBMC0GZcwCg",
-    "https://www.youtube.com/embed/oMUk4ExRD0A",
-    "https://www.youtube.com/embed/xf9P5O8tEEE"
-  ];
-
-  // open vieo lightbox
-  $(".beads").each(function(){
-    $(this).click(function(){
-      var indexBead = $(this).index();
-      var indexVid = videos[indexBead - 3] + "?autoplay=1&autohide=1&showinfo=0&controls=0&hd=1";
-      console.log(indexBead,indexVid);
-      $("#video-embed").find("iframe").attr("src", indexVid);
-      $('html,body').css({
-        "overflow-y" : "hidden"
-      });
-      $("#video-embed").fadeIn();
-      $("#video-embed > .close-button").fadeIn();
-    });
-  });
+  // var videos = [
+  //   "https://www.youtube.com/embed/CUGLxMZ2yZ8",
+  //   "https://www.youtube.com/embed/WfhnEAaX3R8",
+  //   "https://www.youtube.com/embed/6SjuC6w9m7c",
+  //   "https://www.youtube.com/embed/xMnjDeiJlBM",
+  //   "https://www.youtube.com/embed/TKTiGceB5n8",
+  //   "https://www.youtube.com/embed/-SMHojCME-I",
+  //   "https://www.youtube.com/embed/QEMy9clZFEk",
+  //   "https://www.youtube.com/embed/NaczwMFu_J8",
+  //   "https://www.youtube.com/embed/lO--wZ-Q7lE",
+  //   "https://www.youtube.com/embed/xuEZ4Ts0jBg",
+  //   "https://www.youtube.com/embed/-Bwj1-3nro8",
+  //   "https://www.youtube.com/embed/rBMC0GZcwCg",
+  //   "https://www.youtube.com/embed/oMUk4ExRD0A",
+  //   "https://www.youtube.com/embed/xf9P5O8tEEE"
+  // ];
+  //
+  // // open vieo lightbox
+  // $(".beads").each(function(){
+  //   $(this).click(function(){
+  //     var indexBead = $(this).index();
+  //     var indexVid = videos[indexBead - 3] + "?autoplay=1&autohide=1&showinfo=0&controls=0&hd=1";
+  //     console.log(indexBead,indexVid);
+  //     $("#video-embed").find("iframe").attr("src", indexVid);
+  //     $('html,body').css({
+  //       "overflow-y" : "hidden"
+  //     });
+  //     $("#video-embed").fadeIn();
+  //     $("#video-embed > .close-button").fadeIn();
+  //   });
+  // });
 
   // close video lightbox
   $("#video-embed > .close-button").click(function(){
@@ -156,6 +281,38 @@ $(document).ready(function(){
     });
   });
 
+  // $(".dropdown-info, .dropdown-about").click(function(){
+    $(".first-show, .click-more").delay(1000).slideDown(1000);
+    // $(".dropdown-about-content").delay(1000).slideToggle(1000);
+  // });
+
+  $(".dropdown-info").click(function(){
+    $(".first-show").slideDown("slow");
+    // $(".dropdown-info-content").slideDown("slow");
+  });
+
+  $(".dropdown-about").click(function(){
+    $(".dropdown-about-content").slideToggle("slow");
+  });
+
+  $(".dropdown-contact").click(function(){
+    $(".dropdown-contact-content").slideDown("slow");
+  });
+
+  $('.click-more').click(function(){
+    $(this).hide(0);
+    $('.click-less').show();
+    $('.more-content').slideDown("slow");
+  });
+
+  $('.click-less').click(function(){
+    $(this).hide(0);
+    $('.click-more').show();
+    $('.more-content').slideUp("slow");
+  });
+  // $(".dropdown-about").click(function(){
+  //   $(".dropdown-about-content").slideToggle("slow");
+  // });
 
   // const beadsSet2 = 8;
   // for (var i = beadsSet1; i < beadsSet2; i++) {
