@@ -4,9 +4,9 @@ $(window).scroll(function() {
 
 $(document).ready(function(){
   $("#gallery-popup").hide();
-  $("#video-embed").hide();
+  // $("#video-embed").hide();
   $("#gallery-popup > .close-button").hide();
-  $("#video-embed > .close-button").hide();
+  // $("#video-embed > .close-button").hide();
 
   // keep same scroll position after reload
   if (sessionStorage.scrollTop != "undefined") {
@@ -14,7 +14,12 @@ $(document).ready(function(){
   }
 
   // parallax effect
-  var rellax = new Rellax('.parallax-item');
+  // var rellax = new Rellax('.parallax-item');
+  // var scroll = new LocomotiveScroll();
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
 
   // adjust images and videos left position based on 4 anchor points
   var arr = [0,1/5,2/5,3/5,4/5,5/5];
@@ -156,10 +161,10 @@ $(document).ready(function(){
       "overflow-y" : "hidden"
     });
 
-    var randomAud = Math.floor(Math.random() * 3)
-    var audio = $(".audio");
-    audio.get(randomAud).play();
-    console.log(randomAud);
+    // var randomAud = Math.floor(Math.random() * 3)
+    // var audio = $(".audio");
+    // audio.get(randomAud).play();
+    // console.log(randomAud);
 
 
     // find index of clicked image
@@ -282,13 +287,28 @@ $(document).ready(function(){
   });
 
   // $(".dropdown-info, .dropdown-about").click(function(){
-    $(".first-show, .click-more").delay(1000).slideDown(1000);
+  $(".click-more").hide();
     // $(".dropdown-about-content").delay(1000).slideToggle(1000);
   // });
 
-  $(".dropdown-info").click(function(){
-    $(".first-show").slideDown("slow");
-    // $(".dropdown-info-content").slideDown("slow");
+  $(".dropdown-info p:first-child").click(function(ev){
+    ev.preventDefault();
+    $(".first-show, .more-content").slideToggle("slow");
+
+    // $(".more-content").slideToggle();
+    // $('.click-more').click(function(e){
+    //   e.preventDefault();
+    //   $('.more-content').slideToggle();
+    //   $(this).find("span").text( $(this).find("span").text() == 'more' ? "less" : "more"); // using ternary operator.
+    // });
+    // $(".click-more").click(function(){
+    //   $(this).find("span").html("less");
+    //   $(".more-content").slideDown("slow");
+    //   $(this).click(function(){
+    //     $(this).find("span").html("more");
+    //     $(".more-content").slideUp("slow");
+    //   });
+    // });
   });
 
   $(".dropdown-about").click(function(){
@@ -296,20 +316,16 @@ $(document).ready(function(){
   });
 
   $(".dropdown-contact").click(function(){
-    $(".dropdown-contact-content").slideDown("slow");
+    $(".dropdown-contact-content").slideToggle("slow");
   });
 
-  $('.click-more').click(function(){
-    $(this).hide(0);
-    $('.click-less').show();
-    $('.more-content').slideDown("slow");
-  });
+  // $('.click-more').click(function(){
+  //   $(this).hide(0);
+  //   $('.click-less').show();
+  //   $('.more-content').slideDown("slow");
+  // });
+  //
 
-  $('.click-less').click(function(){
-    $(this).hide(0);
-    $('.click-more').show();
-    $('.more-content').slideUp("slow");
-  });
   // $(".dropdown-about").click(function(){
   //   $(".dropdown-about-content").slideToggle("slow");
   // });
