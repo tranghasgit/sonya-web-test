@@ -18,142 +18,142 @@ $(document).ready(function(){
   // var scroll = new LocomotiveScroll();
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+    smooth: true,
   });
 
   // adjust images and videos left position based on 4 anchor points
-  var arr = [0,1/5,2/5,3/5,4/5,5/5];
+  // var arr = [0,1/5,2/5,3/5,4/5,5/5];
 
   //images
-  $(".scroll-item").each(function(){
-    const winW = $(window).width();
-    const itemW = $(this).children().width();
-    const offset = (winW-itemW);
-    $(this).children('.img-0').css({
-      "margin-left" : offset * arr[4],
-    });
-    $(this).children('.img-1').css({
-      "margin-left" : offset * arr[1]
-    });
-    $(this).children('.img-2').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.img-3').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.img-4').css({
-      "margin-left" : offset * arr[5]
-    });
-    $(this).children('.img-5').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.img-6').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.img-7').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.img-8').css({
-      "margin-left" : offset * arr[1]
-    });
-    $(this).children('.img-9').css({
-      "margin-left" : offset * arr[5]
-    });
-    $(this).children('.img-10').css({
-      "margin-left" : offset * arr[1]
-    });
-    $(this).children('.img-11').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.img-12').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.img-13').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-14').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.img-15').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-16').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.img-17').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.img-18').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.img-19').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-20').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-21').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.img-22').css({
-      "margin-left" : offset * arr[5]
-    });
-    $(this).children('.img-23').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.img-24').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-25').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.img-26').css({
-      "margin-left" : offset * arr[4]
-    });
-  });
+  // $(".scroll-item").each(function(){
+  //   const winW = $(window).width();
+  //   const itemW = $(this).children().width();
+  //   const offset = (winW-itemW);
+  //   $(this).children('.img-0').css({
+  //     "margin-left" : offset * arr[4],
+  //   });
+  //   $(this).children('.img-1').css({
+  //     "margin-left" : offset * arr[1]
+  //   });
+  //   $(this).children('.img-2').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.img-3').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.img-4').css({
+  //     "margin-left" : offset * arr[5]
+  //   });
+  //   $(this).children('.img-5').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.img-6').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.img-7').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.img-8').css({
+  //     "margin-left" : offset * arr[1]
+  //   });
+  //   $(this).children('.img-9').css({
+  //     "margin-left" : offset * arr[5]
+  //   });
+  //   $(this).children('.img-10').css({
+  //     "margin-left" : offset * arr[1]
+  //   });
+  //   $(this).children('.img-11').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.img-12').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.img-13').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-14').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.img-15').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-16').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.img-17').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.img-18').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.img-19').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-20').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-21').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.img-22').css({
+  //     "margin-left" : offset * arr[5]
+  //   });
+  //   $(this).children('.img-23').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.img-24').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-25').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.img-26').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  // });
 
   // videos
-  $(".scroll-item-vid").each(function(){
-    const winW = $(window).width();
-    const itemW = $(this).children().width();
-    const offset = (winW-itemW);
-    $(this).children('.vid-0').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.vid-1').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.vid-2').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.vid-3').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.vid-4').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.vid-5').css({
-      "margin-left" : offset * arr[2]
-    });
-    $(this).children('.vid-6').css({
-      "margin-left" : offset * arr[5]
-    });
-    $(this).children('.vid-7').css({
-      "margin-left" : offset * arr[3]
-    });
-    $(this).children('.vid-8').css({
-      "margin-left" : offset * arr[4]
-    });
-    $(this).children('.vid-9').css({
-      "margin-left" : offset * arr[0]
-    });
-    $(this).children('.vid-10').css({
-      "margin-left" : offset * arr[5]
-    });
-    $(this).children('.vid-11').css({
-      "margin-left" : offset * arr[0]
-    });
-  });
+  // $(".scroll-item-vid").each(function(){
+  //   const winW = $(window).width();
+  //   const itemW = $(this).children().width();
+  //   const offset = (winW-itemW);
+  //   $(this).children('.vid-0').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.vid-1').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.vid-2').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.vid-3').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.vid-4').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.vid-5').css({
+  //     "margin-left" : offset * arr[2]
+  //   });
+  //   $(this).children('.vid-6').css({
+  //     "margin-left" : offset * arr[5]
+  //   });
+  //   $(this).children('.vid-7').css({
+  //     "margin-left" : offset * arr[3]
+  //   });
+  //   $(this).children('.vid-8').css({
+  //     "margin-left" : offset * arr[4]
+  //   });
+  //   $(this).children('.vid-9').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  //   $(this).children('.vid-10').css({
+  //     "margin-left" : offset * arr[5]
+  //   });
+  //   $(this).children('.vid-11').css({
+  //     "margin-left" : offset * arr[0]
+  //   });
+  // });
 
   // gallery lightbox function
   $(".scroll-item").click(function(){
@@ -228,10 +228,10 @@ $(document).ready(function(){
 
     var posLR = ["left","right"];
     var randPosLR = Math.floor(Math.random() * ($(window).width() - beadW));
-    var randPosLH = Math.floor(Math.random() * ($(".scroll-wrapper").height() - beadH));
+    var randPosLH = Math.floor(Math.random() * ($("#scroll-wrapper").height() - beadH));
     var xPos = 50 + 80 * Math.sin((i / 80) * 5 * Math.PI);
 
-    $("body").append(newDiv);
+    $("#scroll-wrapper").append(newDiv);
     $(".bead-" + i).css({
       "position":"absolute",
       "top": randPosLH,
