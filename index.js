@@ -1,13 +1,18 @@
-$(window).scroll(function() {
-  sessionStorage.scrollTop = $(this).scrollTop();
-});
+// $(window).scroll(function() {
+//   sessionStorage.scrollTop = $(this).scrollTop();
+// });
 
 $(document).ready(function(){
 
   // keep same scroll position after reload
-  if (sessionStorage.scrollTop != "undefined") {
-    $(window).scrollTop(sessionStorage.scrollTop);
-  }
+  // if (sessionStorage.scrollTop != "undefined") {
+  //   $(window).scrollTop(sessionStorage.scrollTop);
+  // }
+  var outrHeight = 0;
+  $("img, video").each(function(){
+    outrHeight += $(this).outerHeight();
+  });
+  console.log(outrHeight);
 
   // parallax effect
   const scroll = new LocomotiveScroll({
@@ -20,6 +25,9 @@ $(document).ready(function(){
 
   // gallery lightbox function
   $(".scroll-item").click(function(){
+    $("#gallery-popup").css({
+      "overflow-x" : "auto",
+    });
     $('#scroll-wrapper').css({
       "overflow-y" : "hidden"
     });
@@ -41,9 +49,10 @@ $(document).ready(function(){
       "margin-right" : '.5em',
       "margin-left" : '0em',
     });
-    // $('[data-target]').css({
-    //   "opacity" : .25,
-    // });
+    $('[data-target]').css({
+      "opacity" : .25,
+    });
+
 
     // scroll target image to correct position determined by clicked image
     var target = $("#gallery-popup").find("[data-target='" + i + "']");
@@ -72,9 +81,12 @@ $(document).ready(function(){
   // close lightbox
   $("#gallery-popup > .close-button").click(function(){
     $("#gallery-popup").fadeOut();
+    $("#gallery-popup").css({
+      "overflow-x" : "hidden",
+    });
     $(this).fadeOut();
     $('#scroll-wrapper').css({
-      "overflow-y" : "auto"
+      "overflow-y" : "auto",
     });
   });
 
