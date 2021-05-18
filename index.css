@@ -16,6 +16,17 @@
        /* url("media/fonts/lineal/Lineal.otf") format("woff"); */
 }
 
+@font-face {
+  font-family: 'Karrik R';
+  src: url("media/fonts/karrik/fonts/Web/WOFF2/karrik-Regular.woff2") format("woff2");
+       /* url("media/fonts/lineal/Lineal.otf") format("woff"); */
+}
+@font-face {
+  font-family: 'Karrik I';
+  src: url("media/fonts/karrik/fonts/Web/WOFF2/karrik-Italic.woff2") format("woff2");
+       /* url("media/fonts/lineal/Lineal.otf") format("woff"); */
+}
+
 /*
 _______  _______  _        _______  _______  _______  _
 (  ____ \(  ____ \( (    /|(  ____ \(  ____ )(  ___  )( \
@@ -37,7 +48,7 @@ html,body{
   background: #edeae5;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 1rem;
-  line-height: 1.1rem;
+  line-height: 1rem;
 
 }
 
@@ -83,10 +94,13 @@ ______   _______  _______  _       _________ _______  _______
 
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+     
+     font-size: 1.1rem;
+     line-height: 1.2rem;
    }
    .main-menu-title > div{padding:1rem;}
    .headings-style{
-     font-family: 'Voltaire', sans-serif;
+     font-family: 'Karrik R', sans-serif;
      font-size: 2rem;
      line-height: 2rem;
    }
