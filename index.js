@@ -27,6 +27,10 @@ $(document).ready(function(){
       $("#loading-screen").delay("200").fadeOut("slow");
     }
 
+  $("#loading-screen").click(function(){
+    $(this).fadeOut();
+  });
+
 
   // add beads to page
   const beadsSet1 = 14;
