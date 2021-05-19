@@ -6,6 +6,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/locomotive-scroll/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+
 
     <link rel="preload" href="index.css" as="style">
     <link rel="preload" href="index.js" as="script">
@@ -13,17 +16,14 @@
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="video.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="assets/locomotive-scroll/dist/locomotive-scroll.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@ashthornton/asscroll@2.0.1/build/asscroll.min.js"></script>
-    <!-- <script src="assets/rellax/rellax.min.js" charset="utf-8"></script> -->
-    <!-- <script src="assets/bezier-easing/src/index.js" charset="utf-8"></script> -->
-    <!-- <script src="assets/modular-scroll/src/main.js" charset="utf-8"></script> -->
-    <!-- <script src="assets/virtual-scroll/src/index.js" charset="utf-8"></script> -->
     <script src="assets/locomotive-scroll/dist/locomotive-scroll.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
     <script src="index.js" charset="utf-8"></script>
 
     <title>Sonya Mantere</title>
@@ -44,133 +44,136 @@ ______   _______  _______  _       _________ _______  _______
 MAIN PAGE
 ###############################################################
 -->
-    <div id="scroll-wrapper" data-scroll-container>
-      <!--
-      ###############################################################
-      NON-SCROLLING Part
-      ###############################################################
-      -->
-      <div class="main-menu-title">
-        <div class="left-col">
-          <p class="project-name headings-style desktop">She wanted to be named Rebecca</p>
-          <p class="artist-name headings-style desktop">Sonya Mantere</p>
-          <p class="project-name headings-style mobile">She <br>wanted <br>to be <br>named <br>Rebecca</p>
-          <p class="artist-name headings-style mobile">Sonya <br>Mantere</p>
-          <div class="dropdown-info pointer-cursor mobile">
-            <p class="headings-style">Menu</p>
-            <p class="headings-style dropdown-info-content">Info</p>
-            <p class="headings-style dropdown-info-content">About</p>
-          </div>
-          <div class="dropdown-info pointer-cursor desktop">
-            <p class="headings-style">Info</p>
-            <p class="dropdown-info-content">
-              This photographic investigation relies on the nature of representation. <br> <br>
-              Reconstructing my mother in this self-reflective series, I aim to question the society that allows very limited field of gender expression. Intimate and playful dress-up, incorporating gestures and costumes from both feminine and masculine. <br> <br>
-              These images are grounded in intense experimentation and impersonating characters, while pushing and pulling in several directions at once.
-            </p>
-            <p class="dropdown-info-content">
-              As Susan Sontag writes in On Photography: ”To photograph people is to violate them, by seeing them as they never see themselves”. A picture is not just the result of an encounter between the subject and a photographer; image-taking gives the permission to interfere with the individual. <br> <br>
-              Familiar figure, constantly made strange by me, (She wanted to be named) Rebecca expands the notion of the representation of older women. In this theatrical transformation, the images examine interpersonal dynamics between a mother and a daughter. Even someone you think you are familiar with, is actually a possibility for looking at the world in a new way.
-            </p>
-          </div>
-          <div class="dropdown-about pointer-cursor desktop">
-            <p class="headings-style">About</p>
-            <p class="dropdown-about-content">
-              <span class="purple-letter">Sonya Mantere</span> (b.1987,FI) is a visual artist based in Helsinki. <br> <br>
-              In her photographic practice Mantere examines the familiar, her mother, through reconstruction
-              of identities. The self-reflective series aim to address the society that allows very limited field of
-              gender expression. <br> <br>
-              The intense collaboration between them is an ongoing exploration. <br> <br>
-              <a class="more-style" href="media/PDFs/CV.pdf" target="_blank"><span>CV</span></a>
-            </p>
-          </div>
-          <div class="dropdown-contact pointer-cursor desktop">
-              <p class="headings-style">Contact</p>
-              <p class="dropdown-contact-content">
-                <a href="mailto:sonya.mantere@gmail.com">sonya.mantere(at)gmail.com</a>
-                <br>
-                +35 84 051 516 96
-                <br>
-                <a href="https://www.instagram.com/sonyamantere/">@sonyamantere</a>
-              </p>
-            </div>
+    <!--
+    ###############################################################
+    NON-SCROLLING Part
+    ###############################################################
+    -->
+    <div id="main-menu">
+      <div class="left-col">
+        <p class="project-name headings-style desktop">She wanted to be named Rebecca</p>
+        <p class="artist-name headings-style desktop">Sonya Mantere</p>
+        <p class="project-name headings-style mobile">She <br>wanted <br>to be <br>named <br>Rebecca</p>
+        <p class="artist-name headings-style mobile">Sonya <br>Mantere</p>
+        <div class="dropdown-info pointer-cursor mobile">
+          <p class="headings-style">Menu</p>
+          <p class="headings-style dropdown-info-content">Info</p>
+          <p class="headings-style dropdown-info-content">About</p>
         </div>
-        <div class="right-col"></div>
-        <div class="right-col"></div>
+        <div class="dropdown-info pointer-cursor desktop">
+          <p class="headings-style">Info</p>
+          <p class="dropdown-info-content">
+            This photographic investigation relies on the nature of representation. <br> <br>
+            Reconstructing my mother in this self-reflective series, I aim to question the society that allows very limited field of gender expression. Intimate and playful dress-up, incorporating gestures and costumes from both feminine and masculine. <br> <br>
+            These images are grounded in intense experimentation and impersonating characters, while pushing and pulling in several directions at once.
+          </p>
+          <p class="dropdown-info-content">
+            As Susan Sontag writes in On Photography: ”To photograph people is to violate them, by seeing them as they never see themselves”. A picture is not just the result of an encounter between the subject and a photographer; image-taking gives the permission to interfere with the individual. <br> <br>
+            Familiar figure, constantly made strange by me, (She wanted to be named) Rebecca expands the notion of the representation of older women. In this theatrical transformation, the images examine interpersonal dynamics between a mother and a daughter. Even someone you think you are familiar with, is actually a possibility for looking at the world in a new way.
+          </p>
+        </div>
+        <div class="dropdown-about pointer-cursor desktop">
+          <p class="headings-style">About</p>
+          <p class="dropdown-about-content">
+            <span class="purple-letter">Sonya Mantere</span> (b.1987,FI) is a visual artist based in Helsinki. <br> <br>
+            In her photographic practice Mantere examines the familiar, her mother, through reconstruction
+            of identities. The self-reflective series aim to address the society that allows very limited field of
+            gender expression. <br> <br>
+            The intense collaboration between them is an ongoing exploration. <br> <br>
+            <a class="more-style" href="media/PDFs/CV.pdf" target="_blank"><span>CV</span></a>
+          </p>
+        </div>
+        <div class="dropdown-contact pointer-cursor desktop">
+            <p class="headings-style">Contact</p>
+            <p class="dropdown-contact-content">
+              <a href="mailto:sonya.mantere@gmail.com">sonya.mantere(at)gmail.com</a>
+              <br>
+              +35 84 051 516 96
+              <br>
+              <a href="https://www.instagram.com/sonyamantere/">@sonyamantere</a>
+            </p>
+          </div>
       </div>
-      <!--
-      ###############################################################
-      SCROLLING Part(s)
-      ###############################################################
-      -->
-      <div class="scroll-section section-0">
-          <img data-index="0" class="scroll-item img-0" data-scroll data-scroll-speed="0" src="media/images/img-0.jpg" alt="">
-<!--.v--> <video data-video="0" class="scroll-item-vid vid-0" data-scroll data-scroll-speed="2" src="media/videos/vid-0.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="1" class="scroll-item img-1" data-scroll data-scroll-speed="0" src="media/images/img-1.JPG" alt="">
-          <img data-index="2" class="scroll-item img-2" data-scroll data-scroll-speed="1" src="media/images/img-2.jpg" alt="">
-<!--.v--> <video data-video="1" class="scroll-item-vid vid-1" data-scroll data-scroll-speed="2" src="media/videos/vid-1.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-1">
-          <img data-index="3" class="scroll-item img-3" data-scroll data-scroll-speed="1" src="media/images/img-3.JPG" alt="">
-          <img data-index="4" class="scroll-item img-4" data-scroll data-scroll-speed="0" src="media/images/img-4.jpg" alt="">
-          <img data-index="5" class="scroll-item img-5" data-scroll data-scroll-speed="0" src="media/images/img-5.JPG" alt="">
-<!--.v--> <video data-video="2" class="scroll-item-vid vid-2" data-scroll data-scroll-speed="2" src="media/videos/vid-2.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="6" class="scroll-item img-6" data-scroll data-scroll-speed="3" src="media/images/img-6.jpg" alt="">
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-2">
-          <img data-index="7" class="scroll-item img-7" data-scroll data-scroll-speed="0" src="media/images/img-7.jpg" alt="">
-          <img data-index="8" class="scroll-item img-8" data-scroll data-scroll-speed="2" src="media/images/img-8.jpg" alt="">
-<!--.v--> <video data-video="3" class="scroll-item-vid vid-3" data-scroll data-scroll-speed="0" src="media/videos/vid-3.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-<!--.v--> <video data-video="4" class="scroll-item-vid vid-4" data-scroll data-scroll-speed="1" src="media/videos/vid-4.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="9" class="scroll-item img-9" data-scroll data-scroll-speed="2" src="media/images/img-9.jpg" alt="">
-          <img data-index="10" class="scroll-item img-10" data-scroll data-scroll-speed="0" src="media/images/img-10.JPG" alt="">
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-3">
-<!--.v--> <video data-video="5" class="scroll-item-vid vid-5" data-scroll data-scroll-speed="3" src="media/videos/vid-5.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="11" class="scroll-item img-11" data-scroll data-scroll-speed="0" src="media/images/img-11.JPG" alt="">
-<!--.v--> <video data-video="6" class="scroll-item-vid vid-6" data-scroll data-scroll-speed="1" src="media/videos/vid-6.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="12" class="scroll-item img-12" data-scroll data-scroll-speed="2" src="media/images/img-12.jpg" alt="">
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-4">
-          <img data-index="13" class="scroll-item img-13" data-scroll data-scroll-speed="2" src="media/images/img-13.JPG" alt="">
-<!--.v--> <video data-video="7" class="scroll-item-vid vid-7" data-scroll data-scroll-speed="1" src="media/videos/vid-7.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="14" class="scroll-item img-14" data-scroll data-scroll-speed="2" src="media/images/img-14.JPG" alt="">
-          <img data-index="15" class="scroll-item img-15" data-scroll data-scroll-speed="0" src="media/images/img-15.jpg" alt="">
-<!--.v--> <video data-video="8" class="scroll-item-vid vid-8" data-scroll data-scroll-speed="1" src="media/videos/vid-8.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-5">
-<!--.v--> <video data-video="9" class="scroll-item-vid vid-9" data-scroll data-scroll-speed="2" src="media/videos/vid-9.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="16" class="scroll-item img-16" data-scroll data-scroll-speed="1" src="media/images/img-16.jpg" alt="">
-<!--.v--> <video data-video="10" class="scroll-item-vid vid-10" data-scroll data-scroll-speed="0" src="media/videos/vid-10.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="17" class="scroll-item img-17" data-scroll data-scroll-speed="1" src="media/images/img-17.jpg" alt="">
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-6">
-          <img data-index="18" class="scroll-item img-18" data-scroll data-scroll-speed="0" src="media/images/img-18.jpg" alt="">
-          <img data-index="19" class="scroll-item img-19" data-scroll data-scroll-speed="2" src="media/images/img-19.jpg" alt="">
-          <img data-index="20" class="scroll-item img-20" data-scroll data-scroll-speed="1" src="media/images/img-20.jpg" alt="">
-<!--.v--> <video data-video="11" class="scroll-item-vid vid-11" data-scroll data-scroll-speed="2" src="media/videos/vid-11.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-<!--.v--> <video data-video="12" class="scroll-item-vid vid-12" data-scroll data-scroll-speed="2" src="media/videos/vid-12.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="21" class="scroll-item img-21" data-scroll data-scroll-speed="0" src="media/images/img-21.jpg" alt="">
-          <img data-index="22" class="scroll-item img-22" data-scroll data-scroll-speed="1" src="media/images/img-22.JPG" alt="">
-      </div>
-      <!-- ############################################################### -->
-      <div class="scroll-section section-7">
-          <img data-index="23" class="scroll-item img-23" data-scroll data-scroll-speed="1" src="media/images/img-23.jpg" alt="">
-<!--.v--> <video data-video="13" class="scroll-item-vid vid-13" data-scroll data-scroll-speed="3" src="media/videos/vid-13.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="24" class="scroll-item img-24" data-scroll data-scroll-speed="1" src="media/images/img-24.JPG" alt="">
-<!--.v--> <video data-video="14" class="scroll-item-vid vid-13" data-scroll data-scroll-speed="0" src="media/videos/vid-14.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
-          <img data-index="25" class="scroll-item img-25" data-scroll data-scroll-speed="2" src="media/images/img-25.jpg" alt="">
-          <img data-index="26" class="scroll-item img-26" data-scroll data-scroll-speed="1" src="media/images/img-26.jpg" alt="">
-          <img data-index="27" class="scroll-item img-27" data-scroll data-scroll-speed="0" src="media/images/img-27.jpg" alt="">
-      </div>
-      <div class="credit">
-        <p class="">Code by Terrangutan</p>
+    </div>
+
+    <!--
+    ###############################################################
+    SCROLLING Part(s)
+    ###############################################################
+    -->
+
+    <div id="scroll-wrapper" data-scroll-container>
+      <section class="scroll-section section-0" data-scroll-section>
+          <img data-index="0" class="scroll-item img-0" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-0.jpg" alt="">
+          <!-- <video data-video="0" class="scroll-item-vid vid-0" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/videos/vid-0.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video> -->
+          <div style="padding:100% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/552361122?muted=1&autoplay=1&loop=1&autopause=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+          <img data-index="1" class="scroll-item img-1" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-1.JPG" alt="">
+          <img data-index="2" class="scroll-item img-2" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-2.jpg" alt="">
+          <!-- <video data-video="1" class="scroll-item-vid vid-1" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-1.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video> -->
+          <div style="padding:100% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/552396512?muted=1&autoplay=1&loop=1&autopause=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+      </section>
+
+      <section class="scroll-section section-1" data-scroll-section>
+          <img data-index="3" class="scroll-item img-3" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-3.JPG" alt="">
+          <img data-index="4" class="scroll-item img-4" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-4.jpg" alt="">
+          <img data-index="5" class="scroll-item img-5" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-5.JPG" alt="">
+          <video data-video="2" class="scroll-item-vid vid-2" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-2.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="6" class="scroll-item img-6" data-scroll data-scroll-direction="vertical" data-scroll-speed="3" src="media/images/img-6.jpg" alt="">
+          <img data-index="7" class="scroll-item img-7" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-7.jpg" alt="">
+      </section>
+
+      <section class="scroll-section section-2" data-scroll-section>
+          <img data-index="8" class="scroll-item img-8" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-8.jpg" alt="">
+          <video data-video="3" class="scroll-item-vid vid-3" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-3.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <video data-video="4" class="scroll-item-vid vid-4" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-4.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="9" class="scroll-item img-9" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/images/img-9.jpg" alt="">
+          <img data-index="10" class="scroll-item img-10" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-10.JPG" alt="">
+      </section>
+
+      <section class="scroll-section section-3" data-scroll-section>
+          <video data-video="5" class="scroll-item-vid vid-5" data-scroll data-scroll-direction="vertical" data-scroll-speed="3" src="media/videos/vid-5.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="11" class="scroll-item img-11" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-11.JPG" alt="">
+          <img data-index="12" class="scroll-item img-12" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/images/img-12.jpg" alt="">
+          <video data-video="6" class="scroll-item-vid vid-6" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/videos/vid-6.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+      </section>
+
+      <section class="scroll-section section-4" data-scroll-section>
+          <img data-index="13" class="scroll-item img-13" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/images/img-13.JPG" alt="">
+          <video data-video="7" class="scroll-item-vid vid-7" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/videos/vid-7.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <video data-video="8" class="scroll-item-vid vid-8" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/videos/vid-8.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="15" class="scroll-item img-15" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-15.jpg" alt="">
+          <img data-index="14" class="scroll-item img-14" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-14.JPG" alt="">
+      </section>
+
+      <section class="scroll-section section-5" data-scroll-section>
+          <img data-index="16" class="scroll-item img-16" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-16.jpg" alt="">
+          <video data-video="10" class="scroll-item-vid vid-10" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/videos/vid-10.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <video data-video="9" class="scroll-item-vid vid-9" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/videos/vid-9.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="17" class="scroll-item img-17" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-17.jpg" alt="">
+      </section>
+
+      <section class="scroll-section section-6" data-scroll-section>
+          <img data-index="18" class="scroll-item img-18" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-18.jpg" alt="">
+          <img data-index="19" class="scroll-item img-19" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/images/img-19.jpg" alt="">
+          <img data-index="20" class="scroll-item img-20" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-20.jpg" alt="">
+          <video data-video="11" class="scroll-item-vid vid-11" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-11.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <video data-video="12" class="scroll-item-vid vid-12" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/videos/vid-12.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="21" class="scroll-item img-21" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-21.jpg" alt="">
+          <img data-index="22" class="scroll-item img-22" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-22.JPG" alt="">
+      </section>
+
+      <section class="scroll-section section-7" data-scroll-section>
+          <img data-index="23" class="scroll-item img-23" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-23.jpg" alt="">
+          <video data-video="13" class="scroll-item-vid vid-13" data-scroll data-scroll-direction="vertical" data-scroll-speed="3" src="media/videos/vid-13.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="24" class="scroll-item img-24" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-24.JPG" alt="">
+          <video data-video="14" class="scroll-item-vid vid-13" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/videos/vid-14.webm" playsinline autoplay muted controls="true" playsinline loop poster="" type='video/webm'></video>
+          <img data-index="25" class="scroll-item img-25" data-scroll data-scroll-direction="vertical" data-scroll-speed="2" src="media/images/img-25.jpg" alt="">
+          <img data-index="26" class="scroll-item img-26" data-scroll data-scroll-direction="vertical" data-scroll-speed="1" src="media/images/img-26.jpg" alt="">
+          <img data-index="27" class="scroll-item img-27" data-scroll data-scroll-direction="vertical" data-scroll-speed="0" src="media/images/img-27.jpg" alt="">
+      </section>
+
+      <div class="credit" data-scroll-section>
+        <p class="">Code by Terrangu Lar</p>
         <p class="">Copyright &#169; 2021</p>
       </div>
     </div>
@@ -187,9 +190,44 @@ END OF MAIN PAGE
 IMG GALLERY POP-UP WINDOW
 ###############################################################
 -->
-    <div id="gallery-popup">
-      <div class="close-button"><p>close</p></div>
-      <div class="gallery-wrapper">
+<div id="gallery-popup">
+  <div class="my-slider">
+    <img data-target="0" class="img-0" src="media/images/img-0.jpg" alt="">
+    <img data-target="1" class="img-1" src="media/images/img-1.JPG" alt="">
+    <img data-target="2" class="img-2" src="media/images/img-2.JPG" alt="">
+    <img data-target="3" class="img-3" src="media/images/img-3.jpg" alt="">
+    <img data-target="4" class="img-4" src="media/images/img-4.jpg" alt="">
+    <img data-target="5" class="img-5" src="media/images/img-5.JPG" alt="">
+    <img data-target="6" class="img-6" src="media/images/img-6.jpg" alt="">
+    <img data-target="7" class="img-7" src="media/images/img-7.jpg" alt="">
+    <img data-target="8" class="img-8" src="media/images/img-8.jpg" alt="">
+    <img data-target="9" class="img-9" src="media/images/img-9.jpg" alt="">
+    <img data-target="10" class="img-10" src="media/images/img-10.JPG" alt="">
+    <img data-target="11" class="img-11" src="media/images/img-11.JPG" alt="">
+    <img data-target="12" class="img-12" src="media/images/img-12.jpg" alt="">
+    <img data-target="13" class="img-13" src="media/images/img-13.JPG" alt="">
+    <img data-target="14" class="img-14" src="media/images/img-14.JPG" alt="">
+    <img data-target="15" class="img-15" src="media/images/img-15.jpg" alt="">
+    <img data-target="16" class="img-16" src="media/images/img-16.jpg" alt="">
+    <img data-target="17" class="img-17" src="media/images/img-17.jpg" alt="">
+    <img data-target="18" class="img-18" src="media/images/img-18.jpg" alt="">
+    <img data-target="19" class="img-19" src="media/images/img-19.jpg" alt="">
+    <img data-target="20" class="img-20" src="media/images/img-20.jpg" alt="">
+    <img data-target="21" class="img-21" src="media/images/img-21.jpg" alt="">
+    <img data-target="22" class="img-22" src="media/images/img-22.JPG" alt="">
+    <img data-target="23" class="img-23" src="media/images/img-23.jpg" alt="">
+    <img data-target="24" class="img-24" src="media/images/img-24.JPG" alt="">
+    <img data-target="25" class="img-25" src="media/images/img-25.jpg" alt="">
+    <img data-target="26" class="img-26" src="media/images/img-26.jpg" alt="">
+    <img data-target="27" class="img-27" src="media/images/img-27.jpg" alt="">
+  </div>
+  <div class="close-button"><p>close</p></div>
+</div>
+
+<div id="loading-screen"></div>
+    <!-- <div id="gallery-popup">
+
+      <div class="gallery-wrapper my-slider">
         <div data-target="0" class="gallery-item">
           <div class="gallery-img-wrapper">
             <img class="img-0" src="media/images/img-0.jpg" alt="">
@@ -352,14 +390,14 @@ IMG GALLERY POP-UP WINDOW
             <p class="img-number">27/28</p>
           </div>
         </div>
-        <div data-target="26" class="gallery-item">
+        <div data-target="27" class="gallery-item">
           <div class="gallery-img-wrapper">
             <img class="img-27" src="media/images/img-27.jpg" alt="">
             <p class="img-number">28/28</p>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 <!--
 ###############################################################
 END OF IMG GALLERY POP-UP WINDOW
@@ -407,5 +445,6 @@ END OF MAIN PAGE
       <p>not supported</p>
       <source src="media/sounds/my-name-is-ljuba.mp3" type="audio/mpeg">
     </audio> -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
   </body>
 </html>
