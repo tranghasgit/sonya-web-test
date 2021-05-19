@@ -72,43 +72,43 @@ $(document).ready(function(){
 
 
   // image slider
-  var slider = tns({
-    container: '.my-slider',
-    items: 1,
-    "responsive": {
-      "600": {
-        "items": 3,
-        "edgePadding": 50,
-        "gutter": 10,
-      },
-      // "780": {
-      //   "items": 5
-      // }
-    },
-    slideBy: 1,
-    mouseDrag: false,
-    arrowKeys: true,
-    controls: false,
-    nav: false,
-    center: true,
-    "edgePadding": 0,
-    "lazyload": true,
-    autoplay: false
-  });
-
-    $(".scroll-item").click(function(){
-      var i = $(this).data('index');
-      slider.goTo(i);
-      $("[data-target="+i+"]").css({"opacity" : 1,});
-      $("#gallery-popup").fadeIn("slow");
-      $(".close-button").fadeIn("slow");
-      $("[data-target]").click(function(){
-        $(this).animate({"opacity" : 1,});
-      });
-    });
-    $(".close-button").click(function(){
-      $("#gallery-popup").fadeOut("slow");
-    });
+  // var slider = tns({
+  //   container: '.my-slider',
+  //   items: 1,
+  //   "responsive": {
+  //     "600": {
+  //       "items": 3,
+  //       "edgePadding": 50,
+  //       "gutter": 10,
+  //     },
+  //     // "780": {
+  //     //   "items": 5
+  //     // }
+  //   },
+  //   slideBy: 1,
+  //   mouseDrag: false,
+  //   arrowKeys: true,
+  //   controls: false,
+  //   nav: false,
+  //   center: true,
+  //   "edgePadding": 0,
+  //   "lazyload": true,
+  //   autoplay: false
+  // });
+  //
+  //   $(".scroll-item").click(function(){
+  //     var i = $(this).data('index');
+  //     slider.goTo(i);
+  //     $("[data-target="+i+"]").css({"opacity" : 1,});
+  //     $("#gallery-popup").fadeIn("slow");
+  //     $(".close-button").fadeIn("slow");
+  //     $("[data-target]").click(function(){
+  //       $(this).animate({"opacity" : 1,});
+  //     });
+  //   });
+  //   $(".close-button").click(function(){
+  //     $("#gallery-popup").fadeOut("slow");
+  //   });
 
 
   $(".dropdown-info-content, .dropdown-about-content, .dropdown-contact-content").hide();
