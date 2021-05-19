@@ -28,7 +28,9 @@ $(document).ready(function(){
     }
 
   $("#loading-screen").click(function(){
-    $(this).fadeOut();
+    $(this).fadeOut(function(){
+      $(this).remove();
+    });
   });
 
 
