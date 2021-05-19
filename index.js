@@ -19,6 +19,8 @@ $(document).ready(function(){
       imagesLoaded++
       if (imagesLoaded == totalImages) {
         allImagesLoaded()
+      } else {
+        notAllImagesLoaded()
       }
     }
 
@@ -26,12 +28,16 @@ $(document).ready(function(){
       $("#gallery-popup").hide();
       $("#loading-screen").delay("200").fadeOut("slow");
     }
+    function notAllImagesLoaded() {
+      $("#gallery-popup").hide();
+      $("#loading-screen").click(function(){
+        $(this).fadeOut(function(){
+          $(this).remove();
+        });
+      });
+    }
 
-  $("#loading-screen").click(function(){
-    $(this).fadeOut(function(){
-      $(this).remove();
-    });
-  });
+
 
 
   // add beads to page
