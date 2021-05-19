@@ -66,7 +66,7 @@ $(document).ready(function(){
     container: '.my-slider',
     items: 1,
     "responsive": {
-      "500": {
+      "600": {
         "items": 3,
         "edgePadding": 50,
         "gutter": 10,
@@ -76,7 +76,7 @@ $(document).ready(function(){
       // }
     },
     slideBy: 1,
-    mouseDrag: true,
+    mouseDrag: false,
     arrowKeys: true,
     controls: false,
     nav: false,
@@ -91,6 +91,7 @@ $(document).ready(function(){
       slider.goTo(i);
       $("[data-target="+i+"]").css({"opacity" : 1,});
       $("#gallery-popup").fadeIn("slow");
+      $(".close-button").fadeIn("slow");
       $("[data-target]").click(function(){
         $(this).animate({"opacity" : 1,});
       });
