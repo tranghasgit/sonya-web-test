@@ -96,7 +96,9 @@ ______   _______  _______  _       _________ _______  _______
      .dropdown-info-content,
      .dropdown-about-content,
      .dropdown-contact-content{display:block;margin: 1rem 0.5rem;}
-       .headings-style{font-family: 'Karrik R', sans-serif;font-size: 2rem;line-height: 2rem;}
+       .headings-style{
+         /* font-family: 'Karrik R',  */
+         sans-serif;font-size: 2rem;line-height: 2rem;}
        .more-style {color: rgb(120, 24, 222);}
        .more-style span{border-bottom: .1rem rgb(120, 24, 222) solid;}
        .dropdown-contact-content a{color: rgb(120, 24, 222);border: none;}
@@ -257,7 +259,9 @@ _        _______  _______ _________ _______  _______
      .dropdown-info-content,
      .dropdown-about-content,
      .dropdown-contact-content{display:block;margin: 0.5rem 0.3rem;}
-       .headings-style{font-family: 'Karrik R', sans-serif;font-size: 1.3rem;line-height: 1.3rem;}
+       .headings-style{
+         /* font-family: 'Karrik R',  */
+         sans-serif;font-size: 1.3rem;line-height: 1.3rem;}
        .more-style {color: rgb(120, 24, 222);}
        .more-style span{border-bottom: .1rem rgb(120, 24, 222) solid;}
        .dropdown-contact-content a{color: rgb(120, 24, 222);border: none;}
