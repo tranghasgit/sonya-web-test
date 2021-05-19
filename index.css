@@ -190,6 +190,7 @@ ______   _______  _______  _       _________ _______  _______
    }
 
    #gallery-popup{
+     display: none;
      position: absolute;
      top: 0;
      right:0;
