@@ -71,7 +71,7 @@ $(document).ready(function(){
   });
 
 
-  image slider
+  // image /slider
   var slider = tns({
     container: '.my-slider',
     items: 1,
