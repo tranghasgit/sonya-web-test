@@ -89,7 +89,6 @@ $(document).ready(function(){
       }
     },
     slideBy: 1,
-    mouseDrag: true,
     arrowKeys: true,
     controls: false,
     nav: false,
@@ -102,6 +101,7 @@ $(document).ready(function(){
     $(".scroll-item").click(function(){
       var i = $(this).data('index');
       slider.goTo(i);
+      $(".tns-liveregion").hide();
       $("[data-target="+i+"]").css({"opacity" : 1,});
       $("#gallery-popup").fadeIn("slow");
       $(".close-button").fadeIn("slow");

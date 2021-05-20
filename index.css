@@ -155,7 +155,7 @@ ______   _______  _______  _       _________ _______  _______
 
      .section-5{will-change:auto;}
      .section-5 > *:first-child{grid-column: 7 / 12; grid-row: 1;}
-     .section-5 > *:nth-child(2){grid-column: 4 / 7; grid-row: 1;}
+     .section-5 > *:nth-child(2){grid-column: 4 / 7; grid-row: 1;align-self: start;}
      .section-5 > *:nth-child(3){grid-column: 3 / 5; grid-row: 1; align-self: center;}
      .section-5 > *:nth-child(4){grid-column: 1 / 5; grid-row: 2;}
 
