@@ -86,7 +86,7 @@ $(document).ready(function(){
       // }
     },
     slideBy: 1,
-    mouseDrag: false,
+    mouseDrag: true,
     arrowKeys: true,
     controls: false,
     nav: false,
