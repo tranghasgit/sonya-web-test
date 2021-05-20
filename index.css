@@ -190,7 +190,7 @@ ______   _______  _______  _       _________ _______  _______
    }
 
    #gallery-popup{
-     display: none;
+     /* display: none; */
      position: absolute;
      top: 0;
      right:0;
@@ -354,7 +354,7 @@ _        _______  _______ _________ _______  _______
    }
 
    #gallery-popup{
-     display: none;
+     /* display: none; */
      position: absolute;
      top: 0;
      right:0;
