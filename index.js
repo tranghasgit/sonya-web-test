@@ -24,6 +24,13 @@ $(document).ready(function(){
       }
     }
 
+    // add beads
+    if ($(window).width() < 600) {
+      addBeads(10,10,8);
+    } else {
+      addBeads(20,20,14)
+    }
+
     function allImagesLoaded() {
       $("#gallery-popup").hide();
       $("#loading-screen").delay("200").fadeOut("slow");
@@ -36,30 +43,6 @@ $(document).ready(function(){
   // $("#gallery-popup").hide();
   // $("#loading-screen").delay("200").fadeOut("slow");
   //
-
-
-  // add beads to page
-  const beadsSet1 = 14;
-  for (var i = 0; i < beadsSet1; i++) {
-    var newDiv = "<div class='beads bead-" + i + "'><img src='media/deco/img-" + i + ".png'></div>";
-    const beadW = 50;
-    const beadH = 50;
-    const beadsOffsetY = 100;
-
-    var posLR = ["left","right"];
-    var randPosLR = Math.floor(Math.random() * ($(window).width() - beadW));
-    var randPosLH = Math.floor(Math.random() * ($("#scroll-wrapper").height() - beadH));
-    var xPos = 50 + 80 * Math.sin((i / 80) * 5 * Math.PI);
-
-    $("body").append(newDiv);
-    $(".bead-" + i).css({
-      "position":"absolute",
-      "top": randPosLH,
-      "right" : randPosLR,
-      "width": beadW,
-      "height": beadH,
-    });
-  }
 
 
   // parallax effect
@@ -113,7 +96,7 @@ $(document).ready(function(){
       $("#gallery-popup").fadeOut("slow");
     });
 
-
+    // drop down list
   $(".dropdown-info-content, .dropdown-about-content, .dropdown-contact-content").hide();
   $(".dropdown-info p:first-child").click(function(ev){
     ev.preventDefault();
@@ -130,5 +113,35 @@ $(document).ready(function(){
     $(".dropdown-contact-content").slideToggle("slow");
   });
 
+
 // Ending of document ready function
 });
+
+
+$(window).resize(function(){
+    if ($(window).width() < 600) {
+      addBeads(10,10,8);
+    } else {
+      addBeads(20,20,14)
+    }
+})
+
+// function add beads to page
+function addBeads (bw,bh,bn){
+  for (var i = 0; i < bn; i++) {
+    var newDiv = "<div class='beads bead-" + i + "'><img src='media/deco/img-" + i + ".png'></div>";
+
+    var randPosLR = Math.floor(Math.random() * ($(window).width() - bw));
+    var randPosLH = Math.floor(Math.random() * ($(window).height() - bh));
+
+    $("body").append(newDiv);
+    $(".bead-" + i).css({
+      "position":"absolute",
+      "top": randPosLH,
+      "right" : randPosLR,
+      "width": bw,
+      "height": bh,
+      "pointer-events": "none",
+    });
+  }
+}
