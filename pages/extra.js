@@ -21,6 +21,7 @@ $(document).ready(function(){
     $(".dropdown-contact-content").slideToggle("slow");
   });
 
+
 });
 
 $(window).resize(function(){

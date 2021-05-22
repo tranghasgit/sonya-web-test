@@ -1,0 +1,49 @@
+@media only screen and (max-width: 600px) {
+  html,body{
+    margin: 0em;
+    padding: 0em;
+    overflow: scroll;
+    background: rgb(237, 234, 229);
+
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+  }
+  #main-menu{
+    position: relative;
+    width: 100%;
+    z-index: 199;
+
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+  }
+    #main-menu > div{padding:0.8rem 0.8rem 1.6rem 0.8rem;}
+    .project-name{color:rgb(0, 0, 0);}
+    .artist-name{color: rgb(120, 24, 222); margin-bottom: 1.6rem;}
+    .dropdown-info{text-align: right;position: absolute;}
+    .dropdown-info-content{margin:0.8rem 0;}
+    /* .dropdown-info-content a:focus{color: rgb(120, 24, 222);} */
+    .dropdown-info-content:last-child{margin:0.8rem 0 0 0;}
+    .dropdown-info-content a{color:black; border: none;}
+    .purple-letter a{color: rgb(120, 24, 222);}
+      .headings-style{
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 1.1rem;line-height: 1.15rem;}
+  .info-text{
+    padding-bottom: 2.4rem;
+    width:100%;
+  }
+  .info-text p{
+    margin: 0.8rem;
+  }
+  .cv-link{text-align: left;}
+  .credit{padding: 0 0.8rem 0.8rem 0.8rem;}
+  /* .info-text p{
+    margin: 0.8rem;
+    hyphens: auto;
+  } */
+  /* .info-text p:first-child{
+    margin-bottom: 0.8rem;
+  } */
+.mobile-links{border: none;}
+}

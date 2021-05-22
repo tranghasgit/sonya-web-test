@@ -19,16 +19,38 @@ $(document).ready(function(){
       imagesLoaded++
       if (imagesLoaded == totalImages) {
         allImagesLoaded()
-      } else {
-        // notAllImagesLoaded()
       }
     }
 
     // add beads
     if ($(window).width() < 600) {
       addBeads(10,10,8);
+      var slider = tns({
+        container: '.my-slider',
+        items: 1,
+        slideBy: 1,
+        arrowKeys: true,
+        controls: false,
+        nav: false,
+        center: true,
+        "edgePadding": 10,
+        "lazyload": true,
+        autoplay: false
+      });
     } else {
       addBeads(20,20,14)
+      var slider = tns({
+        container: '.my-slider',
+        items: 3,
+        slideBy: 1,
+        arrowKeys: true,
+        controls: false,
+        nav: false,
+        center: true,
+        "edgePadding": 10,
+        "lazyload": true,
+        autoplay: false
+      });
     }
 
     function allImagesLoaded() {
@@ -55,35 +77,21 @@ $(document).ready(function(){
 
 
   // image /slider
-  var slider = tns({
-    container: '.my-slider',
-    items: 1,
-    responsive: {
-      640: {
-        edgePadding: 20,
-        gutter: 20,
-        items: 2
-      },
-      700: {
-        gutter: 30
-      },
-      900: {
-        items: 3
-      }
-    },
-    slideBy: 1,
-    arrowKeys: true,
-    controls: false,
-    nav: false,
-    center: true,
-    "edgePadding": 0,
-    "lazyload": true,
-    autoplay: false
-  });
+  // var slider = tns({
+  //   container: '.my-slider',
+  //   items: 1,
+  //   slideBy: 1,
+  //   arrowKeys: true,
+  //   controls: false,
+  //   nav: false,
+  //   center: true,
+  //   "edgePadding": 10,
+  //   "lazyload": true,
+  //   autoplay: false
+  // });
 
     $(".scroll-item").click(function(){
       var i = $(this).data('index');
-      slider.goTo(i);
       $(".tns-liveregion").hide();
       $("[data-target="+i+"]").css({"opacity" : 1,});
       $("#gallery-popup").fadeIn("slow");
@@ -91,6 +99,7 @@ $(document).ready(function(){
       $("[data-target]").click(function(){
         $(this).animate({"opacity" : 1,});
       });
+      slider.goTo(i);
     });
     $(".close-button").click(function(){
       $("#gallery-popup").fadeOut("slow");
@@ -113,6 +122,11 @@ $(document).ready(function(){
     $(".dropdown-contact-content").slideToggle("slow");
   });
 
+
+  scroll.on('scroll', func => {
+    $(".project-name-animation").delay(500).slideUp(1000);
+    $(".artist-name-animation").css("margin-bottom",0);
+  });
 
 // Ending of document ready function
 });
